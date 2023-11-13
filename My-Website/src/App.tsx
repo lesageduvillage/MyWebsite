@@ -1,13 +1,19 @@
-import './App.css'
+// src/App.tsx
+import React from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
 
-function App() {
-  return (
-    <div className={"App"}>
-        <header className={"App-header"}>
-            <div className={"font-bold text-6xl"}>hello world</div>
-        </header>
-    </div>
-  )
-}
+const App: React.FC = () => {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home/>} />
+                <Route path="/about" element={<About/>} />
+                {/* Add more routes for other pages */}
+            </Routes>
+        </BrowserRouter>
+    );
+};
 
-export default App
+export default App;
